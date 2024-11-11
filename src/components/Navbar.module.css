@@ -1,0 +1,33 @@
+.mainNav {
+    padding: 10px 0 15px;
+    color: var(--very-dark-blue-text);
+    box-shadow: 0 3px 5px -2px rgb(228, 226, 226);
+}
+
+.flex{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.changeMode{
+    cursor: pointer;
+}
+
+.img{
+    width: 16px;
+    height: 16px;
+}
+
+.txt {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
