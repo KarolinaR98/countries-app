@@ -5,6 +5,7 @@
   --dark-gray: hsl(0, 0%, 52%); /*Light Mode Input*/
   --very-light-gray: hsl(0, 0%, 98%); /*Light Mode Background*/
   --white: hsl(0, 0%, 100%); /*Dark Mode Text & Light Mode Elements*/
+  --light-shadow: hsl(0, 4%, 89%);
 }
 
 *{
@@ -14,7 +15,11 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
+body{
+  background-color: var(--very-light-gray);
+}
+
 .container {
-  width: 80%;
+  width: 85%;
   margin: auto;
 }
