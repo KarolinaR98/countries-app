@@ -1,11 +1,6 @@
 .contriesList{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-}
-
-@media (max-width: 992px){
-    .contriesList{
-        justify-content: center;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+    gap: 50px;
+    justify-content: center;
 }

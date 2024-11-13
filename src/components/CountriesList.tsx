@@ -9,7 +9,7 @@ const CountriesList = (props: CountriesListProps) => {
     return (
         <div className={`container ${styles.contriesList}`}>
             {props.countries.length && props.countries.map((country) => {
-                return <CountryCard key={country.name.common} country={country}/>
+                return <CountryCard key={country.cca3} country={country}/>
             })}
         </div>
     )
