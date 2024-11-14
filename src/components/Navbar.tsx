@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <nav className={styles.mainNav}>
             <div className={`container ${styles.flex}`}>
-                <Link className={styles.link} to="/">Where in the world?</Link>
+                <Link className={`link ${styles.logo}`} to="/">Where in the world?</Link>
                 <div className={`${styles.flex} ${styles.modeChanger}`}>
                     <img className={styles.img} src={moonIcon} alt="Moon" />
                     <p className={styles.txt}>Dark Mode</p>

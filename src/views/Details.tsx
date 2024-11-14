@@ -1,7 +1,13 @@
+import { useParams } from "react-router-dom";
+
 const Details = () => {
+    const params = useParams()
+
     return (
-        <div>
-            <h1>Details</h1>
+        <div className="container">
+            <div>
+                
+            </div>
         </div>
     )
 }

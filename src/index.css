@@ -23,3 +23,8 @@ body{
   width: 85%;
   margin: auto;
 }
+
+.link{
+  color: inherit;
+  text-decoration: none;
+}

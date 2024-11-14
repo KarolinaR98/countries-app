@@ -11,9 +11,7 @@
     justify-content: space-between;
 }
 
-.link {
-    text-decoration: none;
-    color: inherit;
+.logo {
     font-weight: 700;
     font-size: 20px;
 }

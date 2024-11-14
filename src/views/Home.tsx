@@ -11,41 +11,22 @@ const Home = () => {
   const [filteredCountries, setFilteredCountries] = useState<Country[]>([]);
 
   const handleSearchValueChange = (value: string) => {
-    const filteredCountriesData = countries?.filter((country) => {
-      if (selectedRegion === "all") {
-        return country.name.common
-          .toLowerCase()
-          .startsWith(value.toLowerCase());
-      } else {
-        if (country.region === selectedRegion) {
-          return country.name.common
-            .toLowerCase()
-            .startsWith(value.toLowerCase());
-        }
-      }
-    });
-
-    setFilteredCountries(filteredCountriesData);
     setSearchValue(value.toLowerCase());
   };
 
   const handleSelectedRegionChange = (value: string) => {
-    const filteredCountriesData = countries?.filter((country) => {
-      if (value === "all") {
+    setSelectedRegion(value);
+  };
+
+  const filterData = () => {
+    const filteredCountriesData = countries.filter((country) => {
+      if (country.region === selectedRegion || selectedRegion === "all") {
         return country.name.common
           .toLowerCase()
           .startsWith(searchValue.toLowerCase());
-      } else {
-        if (country.region === value) {
-          return country.name.common
-            .toLowerCase()
-            .startsWith(searchValue.toLowerCase());
-        }
       }
     });
-
     setFilteredCountries(filteredCountriesData);
-    setSelectedRegion(value);
   };
 
   useEffect(() => {
@@ -54,6 +35,10 @@ const Home = () => {
       setFilteredCountries(data);
     });
   }, []);
+
+  useEffect(() => {
+    filterData();
+  }, [searchValue, selectedRegion]);
 
   return (
     <div>
