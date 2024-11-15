@@ -1,0 +1,21 @@
+.countryDetails{
+    margin-top: 50px;
+    display: flex;
+}
+
+.flagImg{
+    display: block;
+    max-width: 400px;
+    height: 250px;
+    border-radius: 0%;
+}
+
+.countryInfoWrapper{
+    margin-left: 50px;
+}
+
+.columnsWrapper{
+    width: 100%;
+    display: flex;
+    gap: 100px;
+}

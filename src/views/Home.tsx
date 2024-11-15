@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import CountriesList from "../components/CountriesList";
 import { Country } from "../types";
-import countriesApiService from "../apiService/countriesApiService";
 import FilterBar from "../components/FilterBar";
+import { useCountries } from "../countriesContext";
 
 const Home = () => {
-  const [countries, setCountries] = useState<Country[]>([]);
+  const {countries} = useCountries();
   const [searchValue, setSearchValue] = useState<string>("");
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
   const [filteredCountries, setFilteredCountries] = useState<Country[]>([]);
@@ -29,12 +29,9 @@ const Home = () => {
     setFilteredCountries(filteredCountriesData);
   };
 
-  useEffect(() => {
-    countriesApiService.getAllCountries().then((data) => {
-      setCountries(data);
-      setFilteredCountries(data);
-    });
-  }, []);
+  useEffect(()=>{
+    setFilteredCountries(countries);
+  }, [countries])
 
   useEffect(() => {
     filterData();
@@ -46,7 +43,7 @@ const Home = () => {
         handleSearchValueChange={handleSearchValueChange}
         handleSelectedRegionChange={handleSelectedRegionChange}
       />
-      <CountriesList countries={filteredCountries} />
+      <CountriesList filteredCountries={filteredCountries}/>
     </div>
   );
 };

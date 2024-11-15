@@ -22,6 +22,11 @@ export type Country = {
     }
 }
 
+export type CountriesContextType = {
+    countries: Country[],
+    loading: boolean,
+}
+
 export enum FilterType {
     africa = "Africa",
     antarctic = "Antarctic",

@@ -1,18 +1,34 @@
+import { useCountries } from "../countriesContext";
 import { Country } from "../types";
 import styles from "./CountriesList.module.css";
+import loupeImg from "/loupe.svg"
 import CountryCard from "./CountryCard";
 
 type CountriesListProps = {
-    countries: Country[]
-}
+  filteredCountries: Country[];
+};
 const CountriesList = (props: CountriesListProps) => {
-    return (
-        <div className={`container ${styles.contriesList}`}>
-            {props.countries.length && props.countries.map((country) => {
-                return <CountryCard key={country.cca3} country={country}/>
-            })}
+  const { loading } = useCountries();
+  return (
+    <div className={`container ${styles.contriesList}`}>
+      {!loading ? (
+        props.filteredCountries.length ? (
+          props.filteredCountries.map((country) => {
+            return <CountryCard key={country.cca3} country={country} />;
+          })
+        ) : (
+          <div className={styles.noDataContainer}>
+            <img className={styles.loupeImg} src={loupeImg} alt="Loupe" />
+            <p className={styles.noResultsMsg}>No results found</p>
+          </div>
+        )
+      ) : (
+        <div className={styles.loadingContainer}>
+          <p>Loading...</p>
         </div>
-    )
-}
+      )}
+    </div>
+  );
+};
 
 export default CountriesList;

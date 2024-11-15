@@ -7,6 +7,7 @@ type FilterBarProps = {
     handleSelectedRegionChange: (value: string) => void
 }
 const FilterBar = (props: FilterBarProps) => {
+
     return (
         <div className={`container ${styles.filterBar}`}>
             <input className={styles.input} type="text" placeholder="Search for a country..." onChange={(e: React.ChangeEvent<HTMLInputElement>) => props.handleSearchValueChange(e.target.value)}/>
