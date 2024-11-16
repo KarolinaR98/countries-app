@@ -1,12 +1,12 @@
 .filterBar {
     display: flex;
     justify-content: space-between;
-    margin: 40px auto;
+    margin: 50px auto;
 }
 
 .input {
     width: 300px;
-    background-image: url("/public/loupe.svg");
+    background-image: url("/loupe.svg");
     background-repeat: no-repeat;
     background-size: 15px;
     background-position: 10px 10px;

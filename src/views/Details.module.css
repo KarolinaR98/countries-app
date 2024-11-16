@@ -1,3 +1,16 @@
+.backButton{
+    display: block;
+    margin: 50px 0;
+    width: 100px;
+    padding: 5px 20px;
+    text-align: center;
+    box-shadow: 0 0 3px 3px var(--light-shadow);
+    background-image: url("/left-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: 10px 8px;
+}
+
 .countryDetails{
     margin-top: 50px;
     display: flex;
@@ -12,10 +25,48 @@
 
 .countryInfoWrapper{
     margin-left: 50px;
+    height: 250px;
+    padding: 20px 0;
+}
+
+.name{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.nativeName,
+.population,
+.region,
+.subRegion,
+.capital,
+.domain,
+.currencies,
+.languages,
+.borderCountries{
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
 .columnsWrapper{
     width: 100%;
     display: flex;
-    gap: 100px;
+    gap: 50px;
+}
+
+.borderCountriesWrapper{
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.borderCountries{
+    display: inline-block;
+}
+
+.borderCountry{
+    display: inline-block;
+    font-size: 14px;
+    box-shadow: 0 0 3px 3px var(--light-shadow);
+    padding: 1px 20px;
 }

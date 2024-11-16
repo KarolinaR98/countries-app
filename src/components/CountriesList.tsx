@@ -1,11 +1,12 @@
 import { useCountries } from "../countriesContext";
 import { Country } from "../types";
 import styles from "./CountriesList.module.css";
-import loupeImg from "/loupe.svg"
+import loupeImg from "/loupe.svg";
 import CountryCard from "./CountryCard";
 
 type CountriesListProps = {
   filteredCountries: Country[];
+  noDataFound: boolean;
 };
 const CountriesList = (props: CountriesListProps) => {
   const { loading } = useCountries();
@@ -17,10 +18,12 @@ const CountriesList = (props: CountriesListProps) => {
             return <CountryCard key={country.cca3} country={country} />;
           })
         ) : (
-          <div className={styles.noDataContainer}>
-            <img className={styles.loupeImg} src={loupeImg} alt="Loupe" />
-            <p className={styles.noResultsMsg}>No results found</p>
-          </div>
+          props.noDataFound && (
+            <div className={styles.noDataContainer}>
+              <img className={styles.loupeImg} src={loupeImg} alt="Loupe" />
+              <p className={styles.noResultsMsg}>No results found</p>
+            </div>
+          )
         )
       ) : (
         <div className={styles.loadingContainer}>

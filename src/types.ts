@@ -19,7 +19,8 @@ export type Country = {
     },
     languages?: {
         [languageCode: string]: string
-    }
+    },
+    borders?: string[],
 }
 
 export type CountriesContextType = {

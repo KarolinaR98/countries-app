@@ -5,10 +5,11 @@ import FilterBar from "../components/FilterBar";
 import { useCountries } from "../countriesContext";
 
 const Home = () => {
-  const {countries} = useCountries();
+  const { countries } = useCountries();
   const [searchValue, setSearchValue] = useState<string>("");
   const [selectedRegion, setSelectedRegion] = useState<string>("all");
   const [filteredCountries, setFilteredCountries] = useState<Country[]>([]);
+  const [noDataFound, setNoDataFound] = useState<boolean>(false);
 
   const handleSearchValueChange = (value: string) => {
     setSearchValue(value.toLowerCase());
@@ -26,12 +27,19 @@ const Home = () => {
           .startsWith(searchValue.toLowerCase());
       }
     });
+
+    if (filteredCountriesData.length) {
+      setNoDataFound(false);
+    } else {
+      setNoDataFound(true);
+    }
+
     setFilteredCountries(filteredCountriesData);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     setFilteredCountries(countries);
-  }, [countries])
+  }, [countries]);
 
   useEffect(() => {
     filterData();
@@ -43,7 +51,7 @@ const Home = () => {
         handleSearchValueChange={handleSearchValueChange}
         handleSelectedRegionChange={handleSelectedRegionChange}
       />
-      <CountriesList filteredCountries={filteredCountries}/>
+      <CountriesList filteredCountries={filteredCountries} noDataFound={noDataFound}/>
     </div>
   );
 };
