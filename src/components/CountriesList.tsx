@@ -1,8 +1,10 @@
-import { useCountries } from "../countriesContext";
+import { useCountries } from "../context/countriesContext";
 import { Country } from "../types";
 import styles from "./CountriesList.module.css";
 import loupeImg from "/loupe.svg";
+import loupeImgDarkMode from "/loupe-dark-mode.svg"
 import CountryCard from "./CountryCard";
+import { useDarkMode } from "../context/darkModeContext";
 
 type CountriesListProps = {
   filteredCountries: Country[];
@@ -10,6 +12,7 @@ type CountriesListProps = {
 };
 const CountriesList = (props: CountriesListProps) => {
   const { loading } = useCountries();
+  const {darkMode} = useDarkMode();
   return (
     <div className={`container ${styles.contriesList}`}>
       {!loading ? (
@@ -20,8 +23,8 @@ const CountriesList = (props: CountriesListProps) => {
         ) : (
           props.noDataFound && (
             <div className={styles.noDataContainer}>
-              <img className={styles.loupeImg} src={loupeImg} alt="Loupe" />
-              <p className={styles.noResultsMsg}>No results found</p>
+              <img className={styles.loupeImg} src={darkMode ? loupeImgDarkMode : loupeImg} alt="Loupe" />
+              <p className={`${styles.noResultsMsg} ${darkMode && styles.noResultsMsgDarkMode}`}>No results found</p>
             </div>
           )
         )

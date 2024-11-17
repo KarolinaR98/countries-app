@@ -28,6 +28,11 @@ export type CountriesContextType = {
     loading: boolean,
 }
 
+export type DarkModeContextType = {
+    darkMode: boolean,
+    toggleDarkMode: () => void,
+}
+
 export enum FilterType {
     africa = "Africa",
     antarctic = "Antarctic",

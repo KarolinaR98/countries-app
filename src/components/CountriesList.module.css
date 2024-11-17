@@ -1,4 +1,4 @@
-.contriesList{
+.contriesList {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
     gap: 50px;
@@ -6,7 +6,7 @@
     margin-bottom: 50px;
 }
 
-.noDataContainer{
+.noDataContainer {
     height: 40vh;
     display: flex;
     justify-content: center;
@@ -14,18 +14,23 @@
     flex-direction: column;
 }
 
-.loupeImg{
+.loupeImg {
     display: block;
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
 }
 
-.noResultsMsg{
+.noResultsMsg {
     font-size: 30px;
     font-weight: 600;
+    color: var(--very-dark-blue-text);
 }
 
-.loadingContainer{
+.noResultsMsgDarkMode {
+    color: var(--white);
+}
+
+.loadingContainer {
     margin: auto;
 }

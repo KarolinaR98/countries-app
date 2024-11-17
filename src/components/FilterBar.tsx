@@ -1,3 +1,4 @@
+import { useDarkMode } from "../context/darkModeContext";
 import { FilterType } from "../types";
 import styles from "./FilterBar.module.css";
 
@@ -7,11 +8,12 @@ type FilterBarProps = {
     handleSelectedRegionChange: (value: string) => void
 }
 const FilterBar = (props: FilterBarProps) => {
+    const {darkMode} = useDarkMode();
 
     return (
         <div className={`container ${styles.filterBar}`}>
-            <input className={styles.input} type="text" placeholder="Search for a country..." onChange={(e: React.ChangeEvent<HTMLInputElement>) => props.handleSearchValueChange(e.target.value)}/>
-            <select className={styles.dropdown} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => props.handleSelectedRegionChange(e.target.value)}>
+            <input className={`${styles.input} ${darkMode && styles.inputDarkMode}`} type="text" placeholder="Search for a country..." onChange={(e: React.ChangeEvent<HTMLInputElement>) => props.handleSearchValueChange(e.target.value)}/>
+            <select className={`${styles.dropdown} ${darkMode && styles.dropdownDarkMode}`} onChange={(e: React.ChangeEvent<HTMLSelectElement>) => props.handleSelectedRegionChange(e.target.value)}>
                 <option hidden value="">Filter by Region</option>
                 <option value="all">All</option>
                 <option value={FilterType.africa}>{FilterType.africa}</option>

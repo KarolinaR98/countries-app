@@ -12,6 +12,10 @@
     background-position: 10px 10px;
 }
 
+.inputDarkMode {
+    background-image: url("/loupe-dark-mode.svg");
+}
+
 .input,
 .dropdown {
     padding: 10px 30px;
@@ -19,6 +23,14 @@
     border-radius: 5px;
     box-shadow: 0 0 3px 3px var(--light-shadow);
     background-color: var(--white);
+    color: var(--very-dark-blue-text);
+}
+
+.inputDarkMode,
+.dropdownDarkMode {
+    box-shadow: 0 0 3px 3px var(--dark-shadow);
+    background-color: var(--dark-blue);
+    color: var(--white);
 }
 
 @media (max-width: 576px) {

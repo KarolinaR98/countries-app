@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import CountriesList from "../components/CountriesList";
 import { Country } from "../types";
 import FilterBar from "../components/FilterBar";
-import { useCountries } from "../countriesContext";
+import { useCountries } from "../context/countriesContext";
 
 const Home = () => {
   const { countries } = useCountries();

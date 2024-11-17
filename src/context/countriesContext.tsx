@@ -6,7 +6,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { CountriesContextType, Country } from "./types";
+import { CountriesContextType, Country } from "../types";
 import axios from "axios";
 
 const CountriesContext = createContext<CountriesContextType| undefined>(undefined);

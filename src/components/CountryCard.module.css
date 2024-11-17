@@ -2,7 +2,14 @@
     box-shadow: 0 0 3px 3px var(--light-shadow);
     border-radius: 10px;
     background-color: var(--white);
+    color: var(--very-dark-blue-text);
     height: 350px;
+}
+
+.cardDarkMode {
+    box-shadow: 0 0 3px 3px var(--dark-shadow);
+    background-color: var(--dark-blue);
+    color: var(--white);
 }
 
 img {

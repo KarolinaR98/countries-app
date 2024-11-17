@@ -1,20 +1,22 @@
 import styles from "./Details.module.css";
 import { Link, useParams } from "react-router-dom";
-import { useCountries } from "../countriesContext";
+import { useCountries } from "../context/countriesContext";
+import { useDarkMode } from "../context/darkModeContext";
 
 const Details = () => {
   const params = useParams();
   const { countries } = useCountries();
+  const {darkMode} = useDarkMode();
 
   const country = countries.find((country) => country.cca3 === params.cca3);
 
   return (
     <div className="container">
-      <Link className={`link ${styles.backButton}`} to="/">
+      <Link className={`link ${styles.button} ${styles.backButton} ${darkMode && styles.buttonDarkMode}  ${darkMode && styles.backButtonDarkMode}`} to="/">
         Back
       </Link>
       {country && (
-        <div className={styles.countryDetails}>
+        <div className={`${styles.countryDetails} ${darkMode && styles.countryDetailsDarkMode}`}>
           <img
             className={styles.flagImg}
             src={country.flags.png}
@@ -88,7 +90,7 @@ const Details = () => {
             </div>
             {country.borders && (
               <div className={styles.borderCountriesWrapper}>
-                <span className={`bold ${styles.borderCountries}`}>
+                <span className={`bold ${styles.borderCountriesText}`}>
                   Border Countries:{" "}
                 </span>
                 {country.borders.map((borderCountry) => {
@@ -97,7 +99,7 @@ const Details = () => {
                   );
                   return (
                     <Link
-                      className={`link ${styles.borderCountry}`}
+                      className={`link ${styles.borderCountry} ${styles.button} ${darkMode && styles.buttonDarkMode}`}
                       key={borderCountry}
                       to={
                         `/details/${borderCountry}`

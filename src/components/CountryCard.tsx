@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import { Country } from "../types";
 import styles from "./CountryCard.module.css";
+import { useDarkMode } from "../context/darkModeContext";
 
 type CountryCardProps = {
   country: Country;
 };
 const CountryCard = (props: CountryCardProps) => {
+  const {darkMode} = useDarkMode();
+
   return (
     <Link to={`/details/${props.country.cca3}`} className="link">
-      <div className={styles.card}>
+      <div className={`${styles.card} ${darkMode && styles.cardDarkMode}`}>
         <img
           className={styles.img}
           src={props.country.flags.png}
