@@ -2,7 +2,7 @@
   "name": "countries-app",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://KarolinaR98.github.io/frontend-mentor-CountriesApp",
+  "homepage": "https://KarolinaR98.github.io/frontend-mentor-CountriesApp/",
   "type": "module",
   "scripts": {
     "dev": "vite",
