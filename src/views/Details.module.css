@@ -80,11 +80,11 @@
 }
 
 .borderCountriesText{
-    display: inline-block;
+    display: block;
 }
 
 .borderCountry{
-    display: inline-block;
+    display: block;
     padding: 1px 20px;
     font-size: 14px;
 }
