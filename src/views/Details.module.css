@@ -44,7 +44,6 @@
 
 .countryInfoWrapper{
     margin-left: 50px;
-    height: 250px;
     padding: 20px 0;
 }
 
@@ -93,17 +92,13 @@
     .countryDetails{
         flex-direction: column;
         align-items: center;
+        padding-bottom: 30px;
     }
 
     .countryInfoWrapper{
         margin-left: 0;
         max-width: 400px;
     }
-
-    .borderCountriesWrapper {
-        padding-bottom: 30px;
-    }
-
 }
 
 @media (max-width: 576px){
@@ -117,6 +112,5 @@
 
     .columnsWrapper{
         flex-direction: column;
-        margin-bottom: 20px;
     }
 }

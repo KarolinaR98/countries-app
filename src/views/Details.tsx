@@ -6,17 +6,26 @@ import { useDarkMode } from "../context/darkModeContext";
 const Details = () => {
   const params = useParams();
   const { countries } = useCountries();
-  const {darkMode} = useDarkMode();
+  const { darkMode } = useDarkMode();
 
   const country = countries.find((country) => country.cca3 === params.cca3);
 
   return (
     <div className="container">
-      <Link className={`link ${styles.button} ${styles.backButton} ${darkMode && styles.buttonDarkMode}  ${darkMode && styles.backButtonDarkMode}`} to="/">
+      <Link
+        className={`link ${styles.button} ${styles.backButton} ${
+          darkMode && styles.buttonDarkMode
+        }  ${darkMode && styles.backButtonDarkMode}`}
+        to="/"
+      >
         Back
       </Link>
       {country && (
-        <div className={`${styles.countryDetails} ${darkMode && styles.countryDetailsDarkMode}`}>
+        <div
+          className={`${styles.countryDetails} ${
+            darkMode && styles.countryDetailsDarkMode
+          }`}
+        >
           <img
             className={styles.flagImg}
             src={country.flags.png}
@@ -98,15 +107,17 @@ const Details = () => {
                     (country) => country.cca3 === borderCountry
                   );
                   return (
-                    <Link
-                      className={`link ${styles.borderCountry} ${styles.button} ${darkMode && styles.buttonDarkMode}`}
-                      key={borderCountry}
-                      to={
-                        `/details/${borderCountry}`
-                      }
-                    >
-                      {findingCountryDetails?.name.common}
-                    </Link>
+                    <p>
+                      <Link
+                        className={`link ${styles.borderCountry} ${
+                          styles.button
+                        } ${darkMode && styles.buttonDarkMode}`}
+                        key={borderCountry}
+                        to={`/details/${borderCountry}`}
+                      >
+                        {findingCountryDetails?.name.common}
+                      </Link>
+                    </p>
                   );
                 })}
               </div>
