@@ -11,7 +11,7 @@ const Details = () => {
   const country = countries.find((country) => country.cca3 === params.cca3);
 
   return (
-    <div className="container">
+    <div className="container vh100">
       <Link className={`link ${styles.button} ${styles.backButton} ${darkMode && styles.buttonDarkMode}  ${darkMode && styles.backButtonDarkMode}`} to="/">
         Back
       </Link>

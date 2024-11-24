@@ -14,7 +14,7 @@ const CountriesList = (props: CountriesListProps) => {
   const { loading } = useCountries();
   const {darkMode} = useDarkMode();
   return (
-    <div className={`container ${styles.contriesList}`}>
+    <div className={`container vh100 ${styles.contriesList}`}>
       {!loading ? (
         props.filteredCountries.length ? (
           props.filteredCountries.map((country) => {
